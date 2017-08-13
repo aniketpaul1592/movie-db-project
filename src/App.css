@@ -47,5 +47,7 @@ a:-webkit-any-link {
 }
 
 .container {
-  
+  padding: 29px;
+  text-align:left;
+  color: black;
 }

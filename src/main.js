@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import Card from './myCard';
+
+const marginSpace = {
+	marginRight: 15,
+}
+
 class Main extends Component{
 	constructor(props){
 		super(props);
@@ -22,6 +27,14 @@ class Main extends Component{
 		if (!this.state.result) { return null; }
 		return(
 		<div>
+		<div className="shiftLeft">
+			<select className="marginSpace">
+			  <option value="RHigh">Rating: Low</option>
+			  <option value="RLow">Rating: High</option>
+			  <option value="PHigh">Popularity: Low</option>
+			  <option value="PLow">Popularity: High</option>
+			</select>
+		</div>
 			<Card data={this.state.result.results} searchTerm = {this.props.searchTerm}/>	
 			<p className="App-intro">
 	          It will fetch data from api url and send the data as props to card.js which will show the required cards.

@@ -4,11 +4,13 @@ import Header from './header.js'
 import Main from './main.js'
 
 class App extends Component {
+	constructor(props){
+		super(props);
+	}
   render() {
     return (
       <div className="App">
           <Header/>
-          <Main/>
       </div>
     );
   }
