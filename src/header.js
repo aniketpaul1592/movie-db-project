@@ -6,22 +6,12 @@ import FontAwesome from 'react-fontawesome';
 
 const marginSpace = {
 	marginRight: 15,
-
 }
 
 class Header extends Component{
 	constructor(props){
 		super(props);
-		this.state={
-			searchTerm:"",
-		}
-		this.searchEngine = this.searchEngine.bind(this);
 	}
-
-	searchEngine(event){
-		this.setState({searchTerm : event.target.value});
-	}
-
 	render(){
 		return(
 		<div className="headerLayoutApp">
@@ -29,8 +19,7 @@ class Header extends Component{
           <div className = "shiftRight">
           	<Link to="/" style = {marginSpace}>Popular</Link>
           	<Link to="/favorite" style = {marginSpace}>Favourites</Link>
-          	<input type = "text" value = {this.state.searchTerm} onChange={this.searchEngine}/><FontAwesome name='search'/>
-          	<Main searchTerm = {this.state.searchTerm}/>
+          	<input type = "text" onChange={this.props.updateSearch}/><FontAwesome name='search'/>
           </div>
         </div>
 		);
